@@ -75,16 +75,8 @@
   src: url("assets/font/klavika-regular-webfont.woff");
 }
 @font-face {
-  font-family: "Klavika Bold";
-  src: url("assets/font/klavika-bold-webfont.woff");
-}
-@font-face {
   font-family: "Klavika Light";
   src: url("assets/font/klavika-light-webfont.woff");
-}
-@font-face {
-  font-family: "Klavika Medium";
-  src: url("assets/font/klavika-medium-webfont.woff");
 }
 html,
 body {

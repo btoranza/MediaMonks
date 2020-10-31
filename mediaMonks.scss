@@ -1,81 +1,4 @@
-@keyframes scale-in-bottom {
-  0% {
-    transform: scale(0) translateY(0px);
-    transform-origin: 50% 100%;
-    opacity: 1;
-  }
-  30% {
-    transform: scale(1) translateY(-25px);
-    transform-origin: 50% 100%;
-    opacity: 1;
-  }
-  50% {
-    transform: translateY(0px);
-  }
-  75% {
-    transform: translateY(-5px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
-@keyframes scale-in-text {
-  0% {
-    font-size: 0px;
-    opacity: 0;
-  }
-  100% {
-    font-size: 20px;
-    opacity: 1;
-  }
-}
-@keyframes upndown {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-10px);
-  }
-}
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0.2;
-  }
-}
-@keyframes replace-comma {
-  0% {
-    content: "!";
-  }
-  100% {
-    content: ",";
-  }
-}
-@keyframes slide-text {
-  0% {
-    font-size: 0px;
-  }
-  20% {
-    font-size: 20px;
-  }
-  80% {
-    transform: translateX(-75%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0%);
-    opacity: 1;
-    font-size: 20px;
-  }
-}
-
-@mixin center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+@import "keyframes.scss";
 
 @font-face {
   font-family: "Klavika Regular";
@@ -83,19 +6,13 @@
 }
 
 @font-face {
-  font-family: "Klavika Bold";
-  src: url("assets/font/klavika-bold-webfont.woff");
-}
-
-@font-face {
   font-family: "Klavika Light";
   src: url("assets/font/klavika-light-webfont.woff");
 }
 
-@font-face {
-  font-family: "Klavika Medium";
-  src: url("assets/font/klavika-medium-webfont.woff");
-}
+$text-color: white;
+$main-font-family: "Klavika Regular";
+$light-font-family: "Klavika Light";
 
 html,
 body {
@@ -115,7 +32,9 @@ body {
   height: 100vh;
   background-color: black;
   z-index: 99;
-  @include center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &-imgContainer {
     position: relative;
@@ -135,7 +54,9 @@ body {
   &-smokeImgContainer {
     width: 600px;
     height: 400px;
-    @include center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
     animation-delay: 0.3s;
 
@@ -152,9 +73,9 @@ body {
     right: 0px;
     bottom: 65px;
     left: 0px;
-    font-family: "Klavika Light";
+    font-family: $light-font-family;
     text-align: center;
-    color: white;
+    color: $text-color;
     font-style: italic;
 
     span:nth-of-type(1) {
@@ -192,9 +113,9 @@ body {
   }
 
   &-title {
-    font-family: "Klavika Regular";
+    font-family: $main-font-family;
     font-size: 48px;
-    color: white;
+    color: $text-color;
     text-transform: uppercase;
     text-decoration: underline;
     position: fixed;
@@ -231,14 +152,14 @@ body {
   }
 
   &-pageButton {
-    color: white;
+    color: $text-color;
     font-size: 40px;
     cursor: pointer;
   }
 
   &-subtitle {
-    font-family: "Klavika Light";
-    color: white;
+    font-family: $light-font-family;
+    color: $text-color;
     font-size: 12px;
     position: fixed;
 
@@ -267,10 +188,9 @@ body {
       margin: 0px 5px;
     }
   }
-  
 
   &-logo {
-    fill: white;
+    fill: $text-color;
     position: fixed;
     bottom: 0px;
     right: 0px;
@@ -278,7 +198,7 @@ body {
 }
 
 .paginator {
-  font-family: "Klavika Regular";
+  font-family: $main-font-family;
   display: table;
   width: 160px;
   height: 15px;
@@ -296,10 +216,10 @@ body {
   }
 
   &-cell {
-    border: 2px dotted white;
+    border: 2px dotted $text-color;
     display: table-cell;
     text-align: center;
-    color: white;
+    color: $text-color;
     font-size: 9px;
     width: 7px;
     position: relative;
@@ -311,7 +231,7 @@ body {
   }
 
   &-selector {
-    background-color: white;
+    background-color: $text-color;
     width: 11px;
     height: 11px;
     position: absolute;
